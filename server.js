@@ -53,13 +53,13 @@ app.get('/about',(req,res) =>
         PageContent: 'This is for.....',
     }) 
 });
-app.get('/bad', (req,res) => 
+/*app.get('/bad', (req,res) => 
 {
     res.send(
     {
       message: 'This is a bad request: 404'     
     });
-});
+});*/
 
 app.listen(port , ()=>
 { 
