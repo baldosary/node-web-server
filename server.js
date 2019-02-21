@@ -1,3 +1,6 @@
+//Add about, home and project links in home page 
+
+
 const express = require('express');
 const fs = require('fs');
 const hbs = require('hbs');
@@ -30,16 +33,16 @@ app.use((req,res,next) =>
     });
     next();
 });
-app.use((req, res, next) =>
+/*app.use((req, res, next) =>
 {
    res.render('maintanance.hbs'); 
    //console.log('Maintanance');
    
   
-});
+});*/
 app.get('/', (req, res) => 
 {
-    res.render('view.hbs', 
+    res.render('home.hbs', 
     {
         pageTitle: 'Home Page',
         PageContent: 'Welcome to home page',
@@ -47,19 +50,27 @@ app.get('/', (req, res) =>
 });
 app.get('/about',(req,res) =>
 {
-    res.render('view.hbs', 
+    res.render('about.hbs', 
     {
         pageTitle: 'About Page',
         PageContent: 'This is for.....',
     }) 
 });
-/*app.get('/bad', (req,res) => 
+app.get('/project',(req,res) =>
+{
+    res.render('project.hbs', 
+    {
+        pageTitle: 'Project Page',
+        PageContent: 'This is for.....',
+    }) 
+});
+app.get('/bad', (req,res) => 
 {
     res.send(
     {
       message: 'This is a bad request: 404'     
     });
-});*/
+});
 
 app.listen(port , ()=>
 { 
