@@ -4,6 +4,7 @@ const hbs = require('hbs');
 
 const app = express();
 
+const port = process.env.PORT || 3000
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('copyright', () =>
 {
@@ -60,4 +61,7 @@ app.get('/bad', (req,res) =>
     });
 });
 
-app.listen(3000);
+app.listen(port , ()=>
+{ 
+    console.log(`Server is up on port ${port}`);
+});
